@@ -10,4 +10,4 @@ tox                       # Virtualenv management for tests
 tox-battery               # Makes tox aware of requirements file changes
 
 # Acid xblock
--e git+https://github.com/edx/acid-block.git@e46f9cda8a03e121a00c7e347084d142d22ebfb7#egg=acid-xblock
+-e git+https://github.com/edx/acid-block.git@8f49f471d38b1e4e3c3ebef4220ccece494a3b4e#egg=acid-xblock

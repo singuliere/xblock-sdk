@@ -5,6 +5,7 @@ Tests of the Problem XBlock, and its components.
 from __future__ import absolute_import
 
 import json
+from six_twelve import six_ensure_str, six_ensure_binary
 
 import pytest
 
@@ -16,14 +17,14 @@ from xblock.test.tools import assert_equals
 def make_request(body):
     """Mock request method."""
     request = webob.Request({})
-    request.body = body
+    request.body = six_ensure_binary(body)
     request.method = "POST"
     return request
 
 
 def text_of_response(response):
     """Return the text of response."""
-    return "".join(response.app_iter)
+    return "".join([six_ensure_str(x) for x in response.app_iter])
 
 
 @pytest.mark.django_db
